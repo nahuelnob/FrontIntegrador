@@ -37,26 +37,16 @@ function App() {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
-  /*    const login = (userData) => {
-  if (userData.email === EMAIL && userData.password === PASSWORD){
-    setAccess(true); 
-         alert('Login exitoso')
-         navigate('/home');
-      } else {
-         alert('Alguno de los datos son incorrectos')
-      } */
-
-  const login = async (userData) => {
+  const login = async ({ email, password }) => {
     try {
-/*       const { data } = await axios(
+      const { data } = await axios(
         `https://backintegrador-production.up.railway.app/rickandmorty/login?email=${email}&password=${password}`
         // `http://localhost:3001/rickandmorty/login?email=${email}&password=${password}`
-      ); */
-      if (userData.email === 'nahue@gmail.com' && userData.password === 'nahue74')
+      );
       console.log("la datarda --->", data);
-      /* const { access } = data;
-      access === true && alert("login exitoso"); */
-      setAccess(true) && alert("login exitoso"); 
+      const { access } = data;
+      access === true && alert("login exitoso");
+      setAccess(access);
       setEmail(email);
       access && navigate("/home");
     } catch (error) {
