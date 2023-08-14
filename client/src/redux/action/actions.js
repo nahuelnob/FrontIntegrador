@@ -7,7 +7,7 @@ import axios from "axios";
         payload: personaje
     };
 } */
-const URL = "http://localhost:3001/rickandmorty/fav";
+const URL = "https://backintegrador-production.up.railway.app/rickandmorty/fav";
 
 export const addFav = (personaje) => {
   return async (dispatch) => {

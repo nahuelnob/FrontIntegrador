@@ -13,6 +13,7 @@ import React, { useEffect, useState } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
 import store from "./redux/store/store";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFav } from "./redux/action/actions";
@@ -39,7 +40,8 @@ function App() {
   const login = async ({ email, password }) => {
     try {
       const { data } = await axios(
-        `http://localhost:3001/rickandmorty/login?email=${email}&password=${password}`
+        `https://backintegrador-production.up.railway.app/rickandmorty/login?email=${email}&password=${password}`
+        // `http://localhost:3001/rickandmorty/login?email=${email}&password=${password}`
       );
       console.log("la datarda --->", data);
       const { access } = data;
@@ -69,7 +71,8 @@ function App() {
 
     try {
       const { data } = await axios(
-        `http://localhost:3001/rickandmorty/character/${id}`
+        `https://backintegrador-production.up.railway.app/rickandmorty/character/${id}`
+        // `http://localhost:3001/rickandmorty/character/${id}`
       );
       if (data.name) {
         setCharacters((oldChars) => [...oldChars, data]);
