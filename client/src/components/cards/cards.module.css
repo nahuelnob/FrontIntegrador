@@ -1,0 +1,37 @@
+.div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+}
+
+.divListaCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 85%;
+  overflow-y: auto;
+  transform: translateY(10rem);
+}
+
+@media screen and (max-width: 700px) {
+  .divListaCards{
+    transform: translateY(12rem);
+  }
+}
+
+.divListaCards::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.divListaCards::-webkit-scrollbar-thumb {
+  background-color: rgb(52, 146, 52);
+  border-radius: 1rem;
+}
+
+.divListaCards::-webkit-scrollbar-track {
+  background-color: black;
+  border-radius: 1rem;
+}
